@@ -5,6 +5,7 @@ import socket
 import requests
 import threading
 import time
+import speedtest
 
 app = Flask(__name__, static_folder='../build', static_url_path='/')
 
