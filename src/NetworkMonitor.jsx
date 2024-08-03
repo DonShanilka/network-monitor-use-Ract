@@ -48,7 +48,28 @@ const NetworkMonitor = () => {
                 <p>Download Speed: {downloadSpeed} Mb</p>
                 <p>Upload Speed: {uploadSpeed} Mb</p>
                 <p>Ping: {ping} ms</p>
-                <p>Data Usage: {dataUsage.received} MB received, {dataUsage.sent} MB sent, {dataUsage.total} MB total</p>
+                <table border="1" style={{ marginTop: '20px', width: '100%', textAlign: 'left' }}>
+                    <thead>
+                        <tr>
+                            <th>Data Usage</th>
+                            <th>Amount (MB)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Received</td>
+                            <td>{dataUsage.received}</td>
+                        </tr>
+                        <tr>
+                            <td>Sent</td>
+                            <td>{dataUsage.sent}</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>{dataUsage.total}</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <p>Total Data Usage: {totalUsage} MB</p>
                 <p>My IP Address: {ip}</p>
             </div>
