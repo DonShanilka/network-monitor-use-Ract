@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './NetworkMonitor.css';
 
 const NetworkMonitor = () => {
     const [downloadSpeed, setDownloadSpeed] = useState("Calculating...");
@@ -42,13 +43,13 @@ const NetworkMonitor = () => {
     };
 
     return (
-        <div style={{ padding: '20px' }}>
+        <div className="network-monitor">
             <h1>Network Monitor</h1>
-            <div>
+            <div className="network-info">
                 <p>Download Speed: {downloadSpeed} Mb</p>
                 <p>Upload Speed: {uploadSpeed} Mb</p>
                 <p>Ping: {ping} ms</p>
-                <table border="1" style={{ marginTop: '20px', width: '100%', textAlign: 'left' }}>
+                <table>
                     <thead>
                         <tr>
                             <th>Data Usage</th>
@@ -73,7 +74,7 @@ const NetworkMonitor = () => {
                 <p>Total Data Usage: {totalUsage} MB</p>
                 <p>My IP Address: {ip}</p>
             </div>
-            <div>
+            <div className="ip-info">
                 <input
                     type="text"
                     placeholder="Enter IP to get details"
@@ -81,7 +82,7 @@ const NetworkMonitor = () => {
                     onChange={(e) => setIpInput(e.target.value)}
                 />
                 <button onClick={handleGetIpInfo}>Get IP Info</button>
-                <textarea value={ipInfo} readOnly style={{ width: '100%', height: '200px' }}></textarea>
+                <textarea value={ipInfo} readOnly></textarea>
             </div>
         </div>
     );
