@@ -106,3 +106,5 @@ if __name__ == "__main__":
     threading.Thread(target=update_network_data, daemon=True).start()
     threading.Thread(target=update_speedtest_data, daemon=True).start()
     app.run(debug=True)
+
+    
